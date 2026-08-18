@@ -1,0 +1,56 @@
+{
+  "assessment_reference": "DEMO-PLOT-001",
+  "crop": "Yellow maize",
+  "country_code": "JAM",
+  "planting_date": "2026-08-10",
+  "agronomic": {
+    "crop_compatibility": {
+      "value": 82,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; not a crop recommendation."}
+    },
+    "soil_ph_fit": {
+      "value": 75,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; laboratory confirmation required."}
+    },
+    "nutrient_adequacy": {
+      "value": 63,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; laboratory confirmation required."}
+    },
+    "drainage": {
+      "value": 76,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; field confirmation required."}
+    }
+  },
+  "climate": {
+    "precipitation_fit": {
+      "value": 70,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; requires validated source data."}
+    },
+    "drought_resilience": {
+      "value": 65,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; requires validated source data."}
+    },
+    "storm_exposure": {
+      "value": 55,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; requires validated source data."}
+    },
+    "planting_window": {
+      "value": 80,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; requires validated source data."}
+    }
+  },
+  "market": {
+    "demand_signal": {
+      "value": 78,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; requires verified local market evidence."}
+    },
+    "price_trend": {
+      "value": 66,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; requires verified local market evidence."}
+    },
+    "import_substitution_priority": {
+      "value": 85,
+      "evidence": {"source": "illustrative-pilot-fixture", "observed_on": "2026-08-10", "quality": 0.80, "note": "Synthetic demonstration input; requires validated policy data."}
+    }
+  }
+}

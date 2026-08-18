@@ -1,0 +1,59 @@
+{
+  "policy_id": "agriscore-pilot-feasibility-v0.1",
+  "effective_from": "2026-08-18",
+  "purpose": "Non-financial crop feasibility decision support only. This policy is not an underwriting, pricing, insurance, or approval policy.",
+  "weights": {
+    "agronomic": 0.35,
+    "climate": 0.30,
+    "market": 0.35
+  },
+  "bands": [
+    {
+      "minimum_score": 85,
+      "label": "HIGH_FEASIBILITY"
+    },
+    {
+      "minimum_score": 72,
+      "label": "FAVORABLE_FEASIBILITY"
+    },
+    {
+      "minimum_score": 60,
+      "label": "CONDITIONAL_FEASIBILITY"
+    },
+    {
+      "minimum_score": 0,
+      "label": "LOW_FEASIBILITY"
+    }
+  ],
+  "quality_gates": {
+    "minimum_evidence_quality_for_decision_support": 0.70,
+    "review_required_factor_floor": 0.40,
+    "max_evidence_age_days": 180
+  },
+  "exclusions": [
+    "credit approval or denial",
+    "loan amount or interest-rate setting",
+    "insurance pricing or eligibility",
+    "contract matching or execution",
+    "automated purchasing"
+  ],
+  "factor_weights": {
+    "agronomic": {
+      "crop_compatibility": 0.30,
+      "soil_ph_fit": 0.25,
+      "nutrient_adequacy": 0.30,
+      "drainage": 0.15
+    },
+    "climate": {
+      "precipitation_fit": 0.35,
+      "drought_resilience": 0.25,
+      "storm_exposure": 0.25,
+      "planting_window": 0.15
+    },
+    "market": {
+      "demand_signal": 0.45,
+      "price_trend": 0.35,
+      "import_substitution_priority": 0.20
+    }
+  }
+}
