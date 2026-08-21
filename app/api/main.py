@@ -13,6 +13,7 @@ from fastapi.responses import JSONResponse
 from app.agents.assessment_brain import AssessmentBrain
 from app.domain.models import AssessmentAudit, AssessmentRequest, AssessmentResponse
 from app.scoring.engine import calculate_assessment, load_policy
+from app.scoring.pilot_scope import load_guyana_pilot_scope
 
 
 APP_VERSION = "0.1.0"
@@ -60,6 +61,31 @@ def create_app() -> FastAPI:
                 "review_required_factor_floor": policy.review_required_factor_floor,
                 "max_evidence_age_days": policy.max_evidence_age_days,
                 "notice": "This is a crop-feasibility policy, not a credit or insurance policy.",
+            }
+        )
+
+    @app.get("/v1/pilots/guyana", tags=["pilot"])
+    async def guyana_pilot_scope() -> JSONResponse:
+        scope = load_guyana_pilot_scope()
+        return JSONResponse(
+            {
+                "pilot_id": scope.pilot_id,
+                "country_code": scope.country_code,
+                "status": scope.status,
+                "financial_actions_permitted": False,
+                "commercial_actions_permitted": False,
+                "crops": [
+                    {
+                        "key": crop.key,
+                        "display_name": crop.display_name,
+                        "crop_profile_id": crop.profile_id,
+                        "active_profile_version": crop.active_profile_version,
+                        "profile_approval_status": crop.profile_approval_status,
+                        "required_evidence_domains": list(crop.required_evidence_domains),
+                        "required_additional_evidence": list(crop.required_additional_evidence),
+                    }
+                    for crop in scope.crops.values()
+                ],
             }
         )
 

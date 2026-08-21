@@ -1,0 +1,50 @@
+{
+  "pilot_id": "guyana-maize-ginger-v0.1",
+  "country_code": "GUY",
+  "status": "controlled_design",
+  "purpose": "Pre-plant crop-feasibility decision support for Guyana only. No financial, insurance, contracting, ordering, or buyer-matching action is permitted.",
+  "assessment_capacity_guidance": 40,
+  "crops": {
+    "maize": {
+      "display_name": "Maize",
+      "crop_profile_id": "guyana-maize",
+      "active_profile_version": null,
+      "profile_approval_status": "PENDING_AGRONOMIC_REVIEW",
+      "required_evidence_domains": [
+        "crop_profile",
+        "soil",
+        "climate",
+        "market"
+      ],
+      "required_additional_evidence": [
+        "field_drainage_observation",
+        "intended_maize_use_or_form"
+      ]
+    },
+    "ginger": {
+      "display_name": "Ginger",
+      "crop_profile_id": "guyana-ginger",
+      "active_profile_version": null,
+      "profile_approval_status": "PENDING_AGRONOMIC_REVIEW",
+      "required_evidence_domains": [
+        "crop_profile",
+        "soil",
+        "climate",
+        "market",
+        "planting_material"
+      ],
+      "required_additional_evidence": [
+        "field_drainage_observation",
+        "planting_material_source",
+        "planting_material_health_status",
+        "intended_ginger_form"
+      ]
+    }
+  },
+  "controls": {
+    "unapproved_profile_forces_review": true,
+    "missing_required_evidence_forces_review": true,
+    "financial_actions_permitted": false,
+    "commercial_actions_permitted": false
+  }
+}

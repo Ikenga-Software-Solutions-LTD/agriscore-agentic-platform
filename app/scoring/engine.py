@@ -18,6 +18,7 @@ from app.domain.models import (
     FactorTrace,
     ScoreBand,
 )
+from app.scoring.pilot_scope import pilot_review_reasons
 
 
 POLICY_PATH = Path(__file__).resolve().parents[2] / "config" / "pilot_policy.json"
@@ -198,6 +199,7 @@ def calculate_assessment(
     score = sum(component.score * component.weight for component in components)
     score = round(score, 2)
     evidence_quality, reasons = _quality_and_reasons(components, active_policy)
+    reasons.extend(pilot_review_reasons(request))
     status = AssessmentStatus.REVIEW_REQUIRED if reasons else AssessmentStatus.DECISION_SUPPORT
 
     return DeterministicAssessment(

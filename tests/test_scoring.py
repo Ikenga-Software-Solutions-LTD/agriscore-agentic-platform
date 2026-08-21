@@ -73,3 +73,24 @@ def test_policy_is_valid_and_has_reproducibility_hash() -> None:
     assert policy.policy_id == "agriscore-pilot-feasibility-v0.1"
     assert len(policy.policy_hash) == 64
     assert sum(policy.weights.values()) == 1.0
+
+
+def test_guyana_maize_requires_profile_approval_without_changing_score() -> None:
+    generic_request = _request()
+    guyana_request = generic_request.model_copy(update={"country_code": "GUY", "crop": "maize"})
+
+    generic_result = calculate_assessment(generic_request, assessment_date=date.today())
+    guyana_result = calculate_assessment(guyana_request, assessment_date=date.today())
+
+    assert guyana_result.feasibility_score == generic_result.feasibility_score
+    assert guyana_result.status == "REVIEW_REQUIRED"
+    assert any("PENDING_AGRONOMIC_REVIEW" in reason for reason in guyana_result.review_reasons)
+
+
+def test_guyana_ginger_requires_profile_approval() -> None:
+    ginger_request = _request().model_copy(update={"country_code": "GUY", "crop": "ginger"})
+
+    result = calculate_assessment(ginger_request, assessment_date=date.today())
+
+    assert result.status == "REVIEW_REQUIRED"
+    assert any("guyana-ginger" in reason for reason in result.review_reasons)

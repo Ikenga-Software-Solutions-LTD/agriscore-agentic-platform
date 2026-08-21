@@ -86,3 +86,15 @@ def test_brain_fallback_does_not_change_completed_assessment(monkeypatch) -> Non
     assert result.narrative.generated_by == "deterministic_fallback"
     assert str(assessment.feasibility_score) in result.narrative.executive_summary
     assert "credit" in result.narrative.executive_summary.lower()
+
+
+def test_guyana_pilot_endpoint_exposes_controlled_maize_and_ginger_scope() -> None:
+    response = TestClient(create_app()).get("/v1/pilots/guyana")
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["country_code"] == "GUY"
+    assert body["financial_actions_permitted"] is False
+    assert body["commercial_actions_permitted"] is False
+    assert {crop["key"] for crop in body["crops"]} == {"maize", "ginger"}
+    assert all(crop["profile_approval_status"] == "PENDING_AGRONOMIC_REVIEW" for crop in body["crops"])
