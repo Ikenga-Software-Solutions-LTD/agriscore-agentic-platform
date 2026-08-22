@@ -1,0 +1,77 @@
+flowchart TB
+    %% AgriScore Guyana Pilot: officer-led journey for maize and ginger
+    START([Farmer expresses interest])
+
+    subgraph FARMER[Farmer]
+      F1[Receives clear explanation<br/>of purpose and limits]
+      F2[Provides consent and plot/crop information]
+      F3[Shares available soil, planting-material<br/>and market records]
+      F4[Discusses plain-language report<br/>with officer]
+      F5[Chooses next agronomic action]
+      F6[Optionally shares follow-up outcome]
+    end
+
+    subgraph OFFICER[Field / Extension Officer]
+      O1[Creates pseudonymous farmer<br/>and plot record]
+      O2[Selects maize or ginger<br/>and planting window]
+      O3[Completes guided evidence checklist]
+      O4[Records source, date, unit,<br/>method and quality for each item]
+      O5[Submits assessment]
+      O6[Resolves evidence gaps or<br/>sends record for review]
+      O7[Explains result and records<br/>follow-up action]
+    end
+
+    subgraph SYSTEM[AgriScore System]
+      S1[Loads Guyana crop checklist<br/>and profile approval state]
+      S2[Validates completeness,<br/>provenance and freshness]
+      S3[Calculates transparent agronomic,<br/>climate and market feasibility score]
+      S4[Generates grounded explanation<br/>or deterministic fallback]
+      S5[Creates immutable factor trace,<br/>review reasons and audit record]
+      S6[Displays farmer-friendly report<br/>and officer action list]
+      S7[Records approved follow-up<br/>and pilot-learning data]
+    end
+
+    subgraph REVIEWER[Agronomist / NAREI Reviewer]
+      R1[Sees review queue with evidence,<br/>factor trace and profile version]
+      R2[Requests clarification or<br/>records review disposition]
+      R3[Reviews / approves crop-profile<br/>version through change control]
+    end
+
+    subgraph ADMIN[Programme Administrator]
+      A1[Monitors pilot data quality,<br/>profile status and review turnaround]
+      A2[Reviews incidents, source failures<br/>and learning summary]
+    end
+
+    START --> F1 --> F2 --> O1 --> O2 --> S1 --> O3 --> F3 --> O4 --> S2
+    S2 -->|Evidence missing, stale<br/>or unverified| O6
+    O6 --> O3
+    S2 -->|Evidence sufficient<br/>for calculation| O5 --> S3 --> S4 --> S5
+    S5 --> D1{Guyana crop profile<br/>approved and evidence ready?}
+    D1 -->|No: REVIEW REQUIRED| R1
+    R1 --> R2
+    R2 -->|More evidence needed| O6
+    R2 -->|Profile/policy issue| R3
+    R3 --> R1
+    D1 -->|Yes: ready for<br/>agronomic discussion| R1
+    R2 -->|Pilot feasibility noted| S6 --> O7 --> F4 --> F5 --> S7 --> F6
+    S5 --> A1
+    S7 --> A2
+
+    FINANCE[[No credit approval, insurance quote,<br/>buyer match, contract, order or payment]]
+    D1 -. non-financial boundary .-> FINANCE
+
+    classDef farmer fill:#EAF5EA,stroke:#2F6B3A,color:#183C20,stroke-width:1px
+    classDef officer fill:#EAF2FF,stroke:#2D6BA3,color:#183B5B,stroke-width:1px
+    classDef system fill:#FFF5D9,stroke:#B57900,color:#5A3C00,stroke-width:1px
+    classDef reviewer fill:#F3ECFF,stroke:#7150A7,color:#38245D,stroke-width:1px
+    classDef admin fill:#F2F2F2,stroke:#666,color:#222,stroke-width:1px
+    classDef decision fill:#FFF1F1,stroke:#B24545,color:#6A1616,stroke-width:2px
+    classDef boundary fill:#FFF7F7,stroke:#B24545,color:#6A1616,stroke-dasharray: 5 5
+
+    class F1,F2,F3,F4,F5,F6 farmer
+    class O1,O2,O3,O4,O5,O6,O7 officer
+    class S1,S2,S3,S4,S5,S6,S7 system
+    class R1,R2,R3 reviewer
+    class A1,A2 admin
+    class D1 decision
+    class FINANCE boundary
