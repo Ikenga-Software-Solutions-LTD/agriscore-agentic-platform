@@ -44,6 +44,7 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 | **21 August 2026** | Guyana pilot scope defined | Guyana was configured as the controlled pilot country, with maize and ginger as the only pilot crops. Both crops were made `PENDING_AGRONOMIC_REVIEW`, preventing them from appearing decision-ready until local crop profiles are approved. The pilot charter, evidence protocol, data-source hierarchy, and Increment 1 backlog were added. | [Commit `2a9cd18`](https://github.com/Ikenga-Software-Solutions-LTD/agriscore-agentic-platform/commit/2a9cd18dc661db54545b2513d15e7ebed5b8e0b4) |
 | **22 August 2026** | User journey and frontend blueprint completed | The full officer-led journey was documented for the farmer, field officer, agronomist/NAREI reviewer, administrator, and technical operator. A visual journey map and a first frontend MVP brief were added to clarify what must be built next. | [Commit `9f35038`](https://github.com/Ikenga-Software-Solutions-LTD/agriscore-agentic-platform/commit/9f350380d1d4f6e7c3d13efe6c40b88ffd827002) |
 | **22 August 2026** | Living project narrative established | This document was created as the central, author-attributed record of the project journey and the rule for documenting material progress was established. | [Commit `1773d0e`](https://github.com/Ikenga-Software-Solutions-LTD/agriscore-agentic-platform/commit/1773d0e653d4e34035dc7a650588b828105bbb09) |
+| **22 August 2026** | Guyana stakeholder engagement pack completed | A complete engagement pack was prepared for NAREI, Hydromet, GMC, Ministry leadership, GSA, NPPO, and future pilot partners. It includes the stakeholder strategy, meeting brief, tailored asks, facilitator playbook, action/decision register, follow-up tools, and first-contact NAREI email. | [Commit `a5a9833`](https://github.com/Ikenga-Software-Solutions-LTD/agriscore-agentic-platform/commit/a5a9833) |
 
 ## What has been built
 
@@ -60,6 +61,7 @@ The project is no longer only an idea or a presentation. It has a real, tested b
 | Frontend portal | Designed, not built. The first interface will be for officers and agronomists, not a self-service farmer app. |
 | Real field data | Not yet connected. The next stage is governed data collection with local partners. |
 | Financial services | Not built and intentionally excluded from the pilot. |
+| Stakeholder engagement | Built. The project now has a structured Guyana partner-engagement strategy, meeting materials, action controls, and follow-up workflow. |
 
 ## Where we are now
 
