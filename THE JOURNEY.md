@@ -4,13 +4,13 @@
 > **Author:** Chinedu Jamike, Libertas Alpha Technologies  
 > **Project:** AgriScore Agentic Platform  
 > **Last updated:** 24 August 2026  
-> **Status:** Future Caribbean Buildathon MVP in active development; Guyana maize-only scope
+> **Status:** Market-ready, crop-agnostic product architecture in active refinement; controlled pilots remain locally scoped
 
 ## Why this document exists
 
 This is the story of how AgriScore is being built: what we are trying to achieve, the choices we have made, the work completed, the lessons learned, and the milestones still ahead. It is intended to be read by the people building, supporting, governing, funding, and eventually using the platform.
 
-AgriScore is being created to help farmers and agricultural professionals make better-informed decisions before planting. It will bring together evidence about a crop, a plot, soil, climate, water risk, and the market, then explain the strengths, uncertainties, and next questions in clear language. The active buildathon MVP is deliberately focused on **Guyana** and **maize only**.
+AgriScore is being created to help farmers and agricultural professionals make better-informed decisions before planting. It will bring together evidence about a crop, a plot, soil, climate, water risk, and the market, then explain the strengths, uncertainties, and next questions in clear language. The product architecture is deliberately **crop-agnostic**; individual pilots remain locally scoped to maintain evidence quality and operational focus.
 
 The ambition is substantial, but the approach is disciplined. We are not building a machine that promises harvests or makes automatic financial decisions. We are building a trusted evidence and decision-support service: one that helps people see what is known, what is uncertain, and what should be checked before significant farming decisions are made.
 
@@ -23,7 +23,7 @@ The ambition is substantial, but the approach is disciplined. We are not buildin
 | **People remain accountable** | Officers and agronomists review evidence and decisions; the software supports their work rather than replacing it. |
 | **Explainability is essential** | Every assessment must show the factors, sources, dates, quality state, and reasons behind its result. |
 | **Safety is designed in** | The platform does not approve credit, quote insurance, set prices, execute contracts, place orders, or make payments. |
-| **Start narrow; learn properly** | We begin with maize in one country and expand only after controlled evidence and field learning. |
+| **Start narrow; learn properly** | The product platform is crop-agnostic, while individual pilots begin with a controlled crop and location scope until evidence and field learning justify expansion. |
 
 ## The story so far
 
@@ -47,6 +47,7 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 | **22 August 2026** | Guyana stakeholder engagement pack completed | A complete engagement pack was prepared for NAREI, Hydromet, GMC, Ministry leadership, GSA, NPPO, and future pilot partners. It includes the stakeholder strategy, meeting brief, tailored asks, facilitator playbook, action/decision register, follow-up tools, and first-contact NAREI email. | [Commit `a5a9833`](https://github.com/Ikenga-Software-Solutions-LTD/agriscore-agentic-platform/commit/a5a9833) |
 | **24 August 2026** | Future Caribbean Buildathon acceptance and maize MVP pivot | Libertas Alpha Technologies, led by Chinedu Jamike, confirmed acceptance into the Future Caribbean Buildathon food-systems track. The delivery scope was reset for a buildathon-ready, maize-only Guyana MVP with visible role journeys, transparent illustrative records, human review, and stakeholder engagement. | Updated overview and buildathon MVP delivery plan |
 | **24 August 2026** | Visible full-stack maize MVP completed | The buildathon project now has a public landing experience, guided maize assessment, safe LLM-backed Maize Guide with deterministic fallback, persisted demo records, reviewer disposition, farmer/institution/reviewer/operator workspaces, partnership expression-of-interest flow, and progressive project updates. All values remain visibly illustrative and non-financial. | Buildathon MVP project checkpoint pending |
+| **24 August 2026** | Market-ready product architecture pivot completed | The product was restructured around the final commercial journey rather than a pilot-specific interface. Public surfaces are now crop-agnostic and present role-based signup, farmer messaging-agent activation, institution onboarding calls, and an operator control center for people, data, integrations, governance, and human support. The messaging experience visibly distinguishes a unique setup code from a live provider-issued WhatsApp QR session. | Market-ready product journeys document and full-stack project implementation |
 
 ## What has been built
 
@@ -58,10 +59,11 @@ The project is no longer only an idea or a presentation. It has a real, tested b
 | Evidence quality controls | Built. Source, date, quality, and staleness are carried into the assessment and can trigger `REVIEW_REQUIRED`. |
 | AI explanation | Built and validated. The AI explains the deterministic result but cannot change it. A non-AI fallback is available. |
 | Audit information | Built. Policy version, policy hash, request fingerprint, factor trace, timestamp, and model mode are retained in the response. |
-| Guyana pilot guard | Built. The active buildathon implementation narrows the visible MVP to Guyana maize only and requires local profile validation before decision-support readiness. |
+| Crop-agnostic public product | Built. The public website and customer journeys are now ready for a multi-crop market position; pilot-specific crop scope remains an internal configuration and evidence-governance decision. |
 | Data integrations | Designed, not connected. Contracts exist for climate, soil, and market evidence providers. |
-| Full-stack product experience | Built for the buildathon MVP. Public, farmer, reviewer, institution, operator, and partner surfaces are connected to persisted illustrative records. |
-| Maize Guide | Built and live-validated with guarded LLM narration and deterministic fallback. It explains evidence and asks follow-up questions without changing scores or making financial/commercial decisions. |
+| Full-stack product experience | Built and restructured. Public, farmer, institution, and operator surfaces are connected to persisted onboarding, activation, integration, and operational records. |
+| AI agent foundation | Built and live-validated with guarded LLM narration and deterministic fallback. The agent architecture can explain visible evidence and ask follow-up questions without changing scores or making financial/commercial decisions. |
+| Messaging activation | Designed and visible. Farmer activation records, an activation code, consent state, and provider setup status are persisted. A live WhatsApp QR session remains pending an approved provider, verified sender, templates, consent workflow, and secure webhook configuration. |
 | Real field data | Not yet connected. The next stage is governed data collection with local partners. |
 | Financial services | Not built and intentionally excluded from the pilot. |
 | Stakeholder engagement | Built. The project now has a structured Guyana partner-engagement strategy, meeting materials, action controls, and follow-up workflow. |
@@ -74,20 +76,28 @@ The active MVP is now **maize-only**. Ginger remains part of the project history
 
 The buildathon mission is to make the product infrastructure visible without overstating local validation. The MVP demonstrates a public product story; guided farmer assessment; a bounded Maize Guide; farmer, institution, reviewer, and operator workspaces; stakeholder engagement; project updates; transparent illustrative data; and a path from demo evidence to locally validated profiles and live integrations.
 
+## Market-ready product pivot — 24 August 2026
+
+The project has now been deliberately reverse-engineered from the intended market product rather than from a narrow pilot interface. This does not remove the need for disciplined local pilots. It ensures that the product foundations—public acquisition, account creation, messaging activation, institution onboarding, operator controls, data/API readiness, and governance—are designed as parts of one coherent commercial system.
+
+The public AgriScore experience is now crop-agnostic. A farmer enters through a clear account and messaging-agent activation journey. An institution enters through a structured onboarding-call request and dashboard-activation pathway. An AgriScore operator enters through a control center for onboarding queues, messaging readiness, data feeds, integration status, operational activities, and governance signals.
+
+The messaging activation journey is intentionally honest. It creates a unique setup identifier and explains the required provider connection steps. It does not falsely imply that a visual code alone activates a live WhatsApp agent. A live connection remains conditional on verified provider infrastructure, consent, sender configuration, approved templates, and secure webhooks.
+
 ## Where we are now
 
-We are at the transition from **technical foundation** to a **buildathon-ready, visible maize MVP**.
+We are at the transition from a **demonstrable technical foundation** to an **operationally credible market-ready product structure**.
 
-The important next task is not simply to add more artificial intelligence. It is to use the MVP to create informed engagement while preserving the conditions needed for local credibility. The product uses clearly labelled illustrative records as it prepares for named agronomic reviewers, selected pilot locations, a soil-testing route, approved climate data, market-observation definitions, and consent/data-sharing before real farmer or plot records are introduced.
+The important next task is not simply to add more artificial intelligence. It is to activate the product architecture with the right operating inputs: selected messaging provider, consent and data-sharing model, named onboarding operators, institution discovery calls, approved data/API pathways, and controlled local validation before real farmer or plot records are introduced.
 
-The immediate engineering work has delivered the public landing experience, guided maize assessment, transparent result, reviewer view, operator command center, institution-interest flow, persisted demo records, and progressive update surfaces. The next operating work is to use these surfaces in stakeholder engagement and replace the illustrative inputs through locally approved evidence paths.
+The immediate engineering work has delivered a polished public website, role-based signup, farmer activation setup, institution onboarding call request, operator command center, integration and data health controls, persisted onboarding records, and progressive update surfaces. The next operating work is to use these surfaces in real customer and partner engagement while replacing illustrative configuration with verified providers, agreed data pathways, and locally approved evidence standards.
 
 ## The road to a market-ready solution
 
 | Stage | Purpose | Evidence of readiness |
 |---|---|---|
 | **Controlled design** | Define the Guyana pilot, users, crops, rules, roles, and evidence requirements | Approved pilot charter, operating roles, evidence protocol, and crop-profile ownership |
-| **Buildathon maize MVP** | Demonstrate the end-to-end maize journey, roles, evidence discipline, and stakeholder path | Working public and role-based product, persisted illustrative records, visible review gate, partnership surface, and traceable demo flow |
+| **Market-ready product architecture** | Demonstrate end-to-end user acquisition, role onboarding, messaging activation, institution coordination, and operator control | Working public and role-based product, persisted onboarding/activation records, clear provider conditions, visible operator work queues, and traceable demo flow |
 | **Field validation** | Compare assessments with expert judgment and observed field outcomes | Expert evaluation, data-quality results, outcome records, and documented limitations |
 | **Calibration and refinement** | Improve profiles, workflow, explanations, and support from real pilot learning | Versioned changes approved through governance and tested before release |
 | **Controlled market launch** | Expand to more users and partners only when the system is proven useful, safe, and operable | Stable operations, partner agreements, support process, security controls, and measurable pilot value |
@@ -96,9 +106,9 @@ A market-ready AgriScore solution will not be defined merely by attractive scree
 
 ## Next chapter
 
-The next chapter begins with buildathon demonstration and collaboration. The available Future Caribbean partnership resources will be evaluated for appropriate infrastructure, deployment, agentic capability, monitoring, and product visibility. NAREI and other relevant Guyana partners will be approached to validate the maize profile, soil evidence, climate and market pathways, field workflow, and evaluation methods.
+The next chapter begins with market activation and collaboration. The team will evaluate appropriate infrastructure, deployment, agentic capability, monitoring, and product-operations resources. NAREI and other relevant Guyana partners will be approached to validate controlled crop-profile, soil, climate, market, field-workflow, and evaluation pathways while the public product remains ready to serve a broader agricultural market.
 
-The work ahead is to prove that the platform is useful in the real decisions farmers and officers face before planting. If it earns that trust with maize in Guyana, the platform will have a credible foundation for carefully expanding to other crops, locations, and partner services.
+The work ahead is to prove that the platform is useful in the real decisions farmers, institutions, and operators face before action. If it earns that trust through controlled local operations, the platform will have a credible foundation for carefully expanding to new crops, locations, messaging channels, integrations, and partner services.
 
 ## Living-record convention
 
