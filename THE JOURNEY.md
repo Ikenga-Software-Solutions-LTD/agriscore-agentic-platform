@@ -48,6 +48,7 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 | **24 August 2026** | Future Caribbean Buildathon acceptance and maize MVP pivot | Libertas Alpha Technologies, led by Chinedu Jamike, confirmed acceptance into the Future Caribbean Buildathon food-systems track. The delivery scope was reset for a buildathon-ready, maize-only Guyana MVP with visible role journeys, transparent illustrative records, human review, and stakeholder engagement. | Updated overview and buildathon MVP delivery plan |
 | **24 August 2026** | Visible full-stack maize MVP completed | The buildathon project now has a public landing experience, guided maize assessment, safe LLM-backed Maize Guide with deterministic fallback, persisted demo records, reviewer disposition, farmer/institution/reviewer/operator workspaces, partnership expression-of-interest flow, and progressive project updates. All values remain visibly illustrative and non-financial. | Buildathon MVP project checkpoint pending |
 | **24 August 2026** | Market-ready product architecture pivot completed | The product was restructured around the final commercial journey rather than a pilot-specific interface. Public surfaces are now crop-agnostic and present role-based signup, farmer messaging-agent activation, institution onboarding calls, and an operator control center for people, data, integrations, governance, and human support. The messaging experience visibly distinguishes a unique setup code from a live provider-issued WhatsApp QR session. | Market-ready product journeys document and full-stack project implementation |
+| **24 August 2026** | Secure web-chat Guide launch completed and validated | The farmer channel was deliberately launched as a mobile-first browser chat rather than an unconfigured WhatsApp integration. Farmers now receive an opaque, high-entropy, time-limited personal link and scannable browser QR, explicitly consent before a session is created, retain persistent conversation history, can opt out, and can trigger a human escalation. The constrained Guide uses a server-side LLM with deterministic fallback and cannot make financial, insurance, purchasing, contract, payment, price, buyer, or yield-guarantee decisions. The operator monitor exposes only aggregate safety/activity signals and escalation metadata—never token or session-key hashes. Automated validation covered one-time activation, consent, history, opt-out, safe fallback, escalation, router access controls, secret sanitization, and responsive web screens. | `docs/web-chat-guide-architecture.md`; `docs/whatsapp-agent-activation-architecture.md`; AgriScore full-stack WebDev implementation and 24 automated tests |
 
 ## What has been built
 
@@ -63,7 +64,7 @@ The project is no longer only an idea or a presentation. It has a real, tested b
 | Data integrations | Designed, not connected. Contracts exist for climate, soil, and market evidence providers. |
 | Full-stack product experience | Built and restructured. Public, farmer, institution, and operator surfaces are connected to persisted onboarding, activation, integration, and operational records. |
 | AI agent foundation | Built and live-validated with guarded LLM narration and deterministic fallback. The agent architecture can explain visible evidence and ask follow-up questions without changing scores or making financial/commercial decisions. |
-| Messaging activation | Designed and visible. Farmer activation records, an activation code, consent state, and provider setup status are persisted. A live WhatsApp QR session remains pending an approved provider, verified sender, templates, consent workflow, and secure webhook configuration. |
+| Messaging activation | Web chat is built and validated as the immediate farmer channel: private activation link/QR, explicit consent, bounded persistent session, opt-out, safe Guide, and human escalation. WhatsApp remains a later, provider-ready channel pending Meta Business assets, a verified sender, templates, consent workflow, and secure webhook configuration. |
 | Real field data | Not yet connected. The next stage is governed data collection with local partners. |
 | Financial services | Not built and intentionally excluded from the pilot. |
 | Stakeholder engagement | Built. The project now has a structured Guyana partner-engagement strategy, meeting materials, action controls, and follow-up workflow. |
@@ -84,13 +85,23 @@ The public AgriScore experience is now crop-agnostic. A farmer enters through a 
 
 The messaging activation journey is intentionally honest. It creates a unique setup identifier and explains the required provider connection steps. It does not falsely imply that a visual code alone activates a live WhatsApp agent. A live connection remains conditional on verified provider infrastructure, consent, sender configuration, approved templates, and secure webhooks.
 
+## Web-chat Guide launch — 24 August 2026
+
+The channel decision was revised after confirming that a live WhatsApp launch would require Meta Business assets, a verified business sender, Cloud API credentials, approved template and opt-in operations, and a securely verified webhook. Those requirements remain valid future work; they were not represented as complete.
+
+The immediate launch channel is instead the **AgriScore Guide web chat**. A farmer signs up, receives a private personal link and browser QR, opens the link on a mobile device, reads the visible operating boundary, and explicitly chooses whether to begin. No session is issued until consent is granted. The browser session is opaque and stored as a hash; it has persistent conversation history, an opt-out path, and a human-escalation route.
+
+The Guide is a constrained support layer, not a decision-maker. It helps organise agricultural questions and useful context, while prohibited financial or commercial requests are met with an immediate boundary response and a human-support escalation. The Guide model runs only on the server and falls back deterministically when a response is unavailable or fails its safety filter. The operator view is administrator-restricted and deliberately exposes operational metadata and aggregate safety signals without exposing personal-link or session-key hashes.
+
+This decision advances the product toward a usable, mobile-first farmer conversation now, without compromising the later channel-neutral architecture. WhatsApp can be added as an additional channel once its provider requirements are actually complete.
+
 ## Where we are now
 
 We are at the transition from a **demonstrable technical foundation** to an **operationally credible market-ready product structure**.
 
 The important next task is not simply to add more artificial intelligence. It is to activate the product architecture with the right operating inputs: selected messaging provider, consent and data-sharing model, named onboarding operators, institution discovery calls, approved data/API pathways, and controlled local validation before real farmer or plot records are introduced.
 
-The immediate engineering work has delivered a polished public website, role-based signup, farmer activation setup, institution onboarding call request, operator command center, integration and data health controls, persisted onboarding records, and progressive update surfaces. The next operating work is to use these surfaces in real customer and partner engagement while replacing illustrative configuration with verified providers, agreed data pathways, and locally approved evidence standards.
+The immediate engineering work has delivered a polished public website, role-based signup, secure web-chat farmer activation, explicit consent, private browser sessions, safe conversational support, human escalation, institution onboarding call request, operator command center, integration and data health controls, persisted operating records, and progressive update surfaces. The next operating work is to use these surfaces in real customer and partner engagement while replacing illustrative configuration with verified providers, agreed data pathways, named support owners, and locally approved evidence standards.
 
 ## The road to a market-ready solution
 
