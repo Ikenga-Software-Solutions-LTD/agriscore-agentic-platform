@@ -89,6 +89,8 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 
 | **26 August 2026** | Farmer correction and human-review request path added | A farmer can now use only their active opaque Guide session to ask for a correction or further human review on one of their own assessment records. The request is separately stored as `OPEN`, session/profile/assessment-bound, duplicate-protected, and audit-recorded without changing the assessment. The farmer sees only a safe request state; no operator rationale, evidence, profile internals, score, or decision is exposed. Full validation passed 47 files and 95 tests. | `drizzle/0010_handy_sinister_six.sql`; `client/src/components/FarmerAssessmentStatus.tsx`; `docs/farmer-correction-request-process.md` |
 
+| **26 August 2026** | Protected correction-request triage added to the operator review queue | Administrators can now see open farmer correction requests inside the governed assessment workspace and record only `ACKNOWLEDGED` or `CLOSED`. This changes the request ticket—not the farmer context, assessment status, evidence, profile, score, or decision—and creates an audit event stating that boundary. Farmers continue to see only a safe request state. Full validation passed 47 files and 96 tests. | `server/assessmentRepository.ts`; `client/src/components/AssessmentReviewQueue.tsx`; `docs/correction-request-triage-process.md` |
+
 ## What has been built
 
 The project is no longer only an idea or a presentation. It has a real, tested backend foundation.
