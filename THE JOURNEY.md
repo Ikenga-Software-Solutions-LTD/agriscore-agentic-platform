@@ -81,6 +81,8 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 
 | **26 August 2026** | Source-provenance readiness controls added for controlled crop-profile evidence | Crop-profile sources now record their proposed permitted purpose, declared licence/review state, geographic relevance, review date, and renewal date. The protected update is limited to active drafts, is audit-recorded, and validates that renewal follows review. It is distinct from source verification, technical connectivity, principal-document approval, profile publication, legal advice, and provider activation. No new live data integration, farmer enrolment, score, recommendation, or automated decision was enabled. Full validation passed 45 files and 88 tests. | `drizzle/0009_lovely_zzzax.sql`; `server/controlRepository.provenance.test.ts`; `docs/source-provenance-readiness.md` |
 
+| **26 August 2026** | Privacy-safe operational monitoring and triage baseline added | AgriScore now exposes an administrator-only aggregate monitoring summary for source health/provenance, principal-document review backlog, Guide session/escalation state counts, assessment state counts, and latest audit timestamps. The projection excludes all farmer messages, private context, raw evidence, source references, review rationale, identities, tokens, scores, recommendations, and pilot controls. It supports manual Detect–Respond–Recover review; it does not alert, contain, recover, approve, enrol, or decide automatically. Full validation passed 46 files and 90 tests. | `server/operationalMonitoring.ts`; `docs/controlled-pilot-operational-monitoring.md` |
+
 ## What has been built
 
 The project is no longer only an idea or a presentation. It has a real, tested backend foundation.
