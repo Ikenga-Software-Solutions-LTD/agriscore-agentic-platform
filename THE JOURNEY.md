@@ -87,6 +87,8 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 
 | **26 August 2026** | Pending deterministic methodology-review package added | Administrators can now request a version-bound methodology-review package for `GOVERNED_CONTEXT_PREPARATION_V1`. It lists pending provenance, evidence/source, deterministic-test, limitations, and named-human-review requirements for an immutable profile version. It is deliberately read-only: it has no farmer data, no field-level score, no approval mutation, no publication, no pilot activation, and no enrolment effect. Full validation passed 46 files and 92 tests. | `server/assessmentMethodology.ts`; `docs/deterministic-methodology-review-readiness.md` |
 
+| **26 August 2026** | Farmer correction and human-review request path added | A farmer can now use only their active opaque Guide session to ask for a correction or further human review on one of their own assessment records. The request is separately stored as `OPEN`, session/profile/assessment-bound, duplicate-protected, and audit-recorded without changing the assessment. The farmer sees only a safe request state; no operator rationale, evidence, profile internals, score, or decision is exposed. Full validation passed 47 files and 95 tests. | `drizzle/0010_handy_sinister_six.sql`; `client/src/components/FarmerAssessmentStatus.tsx`; `docs/farmer-correction-request-process.md` |
+
 ## What has been built
 
 The project is no longer only an idea or a presentation. It has a real, tested backend foundation.
