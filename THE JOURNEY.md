@@ -83,6 +83,8 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 
 | **26 August 2026** | Privacy-safe operational monitoring and triage baseline added | AgriScore now exposes an administrator-only aggregate monitoring summary for source health/provenance, principal-document review backlog, Guide session/escalation state counts, assessment state counts, and latest audit timestamps. The projection excludes all farmer messages, private context, raw evidence, source references, review rationale, identities, tokens, scores, recommendations, and pilot controls. It supports manual Detect–Respond–Recover review; it does not alert, contain, recover, approve, enrol, or decide automatically. Full validation passed 46 files and 90 tests. | `server/operationalMonitoring.ts`; `docs/controlled-pilot-operational-monitoring.md` |
 
+| **26 August 2026** | Pending stakeholder-approval readiness checklist formalised | The blocked supervised-pilot registry now exposes seven explicit pending requirements: role acceptance; stakeholder scope; maize evidence; methodology; privacy/retention/correction; security/recovery rehearsal; and end-to-end operating rehearsal. Each item states the required human evidence, but none can be marked complete, activate enrolment, or change pilot status in the application. The user-nominated roles remain `NOMINATED_PENDING_APPROVAL`, and the pilot remains `BLOCKED` / `DISABLED`. Full validation passed 46 files and 90 tests. | `server/pilotReadiness.ts`; `docs/stakeholder-approval-readiness.md` |
+
 ## What has been built
 
 The project is no longer only an idea or a presentation. It has a real, tested backend foundation.
