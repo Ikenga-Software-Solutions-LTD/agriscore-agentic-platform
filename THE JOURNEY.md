@@ -85,6 +85,8 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 
 | **26 August 2026** | Pending stakeholder-approval readiness checklist formalised | The blocked supervised-pilot registry now exposes seven explicit pending requirements: role acceptance; stakeholder scope; maize evidence; methodology; privacy/retention/correction; security/recovery rehearsal; and end-to-end operating rehearsal. Each item states the required human evidence, but none can be marked complete, activate enrolment, or change pilot status in the application. The user-nominated roles remain `NOMINATED_PENDING_APPROVAL`, and the pilot remains `BLOCKED` / `DISABLED`. Full validation passed 46 files and 90 tests. | `server/pilotReadiness.ts`; `docs/stakeholder-approval-readiness.md` |
 
+| **26 August 2026** | Pending deterministic methodology-review package added | Administrators can now request a version-bound methodology-review package for `GOVERNED_CONTEXT_PREPARATION_V1`. It lists pending provenance, evidence/source, deterministic-test, limitations, and named-human-review requirements for an immutable profile version. It is deliberately read-only: it has no farmer data, no field-level score, no approval mutation, no publication, no pilot activation, and no enrolment effect. Full validation passed 46 files and 92 tests. | `server/assessmentMethodology.ts`; `docs/deterministic-methodology-review-readiness.md` |
+
 ## What has been built
 
 The project is no longer only an idea or a presentation. It has a real, tested backend foundation.
