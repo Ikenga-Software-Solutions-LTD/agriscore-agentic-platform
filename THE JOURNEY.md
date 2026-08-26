@@ -3,7 +3,7 @@
 > **A living record of the AgriScore project**  
 > **Author:** Chinedu Jamike, Libertas Alpha Technologies  
 > **Project:** AgriScore Agentic Platform  
-> **Last updated:** 25 August 2026
+> **Last updated:** 26 August 2026
 > **Status:** Market-ready, crop-agnostic product architecture in active refinement; controlled pilots remain locally scoped
 
 ## Why this document exists
@@ -92,6 +92,7 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 | **26 August 2026** | Protected correction-request triage added to the operator review queue | Administrators can now see open farmer correction requests inside the governed assessment workspace and record only `ACKNOWLEDGED` or `CLOSED`. This changes the request ticket—not the farmer context, assessment status, evidence, profile, score, or decision—and creates an audit event stating that boundary. Farmers continue to see only a safe request state. Full validation passed 47 files and 96 tests. | `server/assessmentRepository.ts`; `client/src/components/AssessmentReviewQueue.tsx`; `docs/correction-request-triage-process.md` |
 
 | **26 August 2026** | Farmer privacy-request path added | An active opaque Guide session can now submit a bounded data-use clarification or deletion-review request. The request is session/profile-bound, duplicate-protected, shown back only as a safe state, and can be acknowledged or closed by administrators. It cannot automatically erase or alter Guide, farmer, context, assessment, evidence, correction, or audit records, and it exposes no protected review material. Full validation passed 48 files and 100 tests. | `drizzle/0011_short_lightspeed.sql`; `client/src/components/FarmerPrivacyRequests.tsx`; `docs/farmer-privacy-request-process.md` |
+| **26 August 2026** | No-enrolment supervised-pilot rehearsal readiness added | AgriScore now has a detailed internal rehearsal script for the existing browser-based Guide, synthetic test context, human review, correction and privacy routes, session replacement, incident handling, and manual pause conditions. A protected administrator control exposes six `PENDING` rehearsal steps and can record a bounded non-sensitive observation for human review, but it cannot mark a step complete, accept a role, approve a stakeholder requirement, activate the pilot, enrol a person, change an assessment, calculate a score, or issue a decision. WhatsApp remains explicitly deferred. The full regression suite passed 48 files and 102 tests plus TypeScript validation. | `docs/no-enrolment-supervised-pilot-rehearsal.md`; `server/pilotReadiness.ts`; rehearsal readiness and control-router tests |
 
 ## What has been built
 
