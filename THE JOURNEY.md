@@ -91,6 +91,8 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 
 | **26 August 2026** | Protected correction-request triage added to the operator review queue | Administrators can now see open farmer correction requests inside the governed assessment workspace and record only `ACKNOWLEDGED` or `CLOSED`. This changes the request ticket—not the farmer context, assessment status, evidence, profile, score, or decision—and creates an audit event stating that boundary. Farmers continue to see only a safe request state. Full validation passed 47 files and 96 tests. | `server/assessmentRepository.ts`; `client/src/components/AssessmentReviewQueue.tsx`; `docs/correction-request-triage-process.md` |
 
+| **26 August 2026** | Farmer privacy-request path added | An active opaque Guide session can now submit a bounded data-use clarification or deletion-review request. The request is session/profile-bound, duplicate-protected, shown back only as a safe state, and can be acknowledged or closed by administrators. It cannot automatically erase or alter Guide, farmer, context, assessment, evidence, correction, or audit records, and it exposes no protected review material. Full validation passed 48 files and 100 tests. | `drizzle/0011_short_lightspeed.sql`; `client/src/components/FarmerPrivacyRequests.tsx`; `docs/farmer-privacy-request-process.md` |
+
 ## What has been built
 
 The project is no longer only an idea or a presentation. It has a real, tested backend foundation.
