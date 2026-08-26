@@ -73,6 +73,8 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 
 | **26 August 2026** | Supervised-pilot state explicitly blocked pending human ownership | The supervised Guyana maize pilot protocol now states that all required operating roles remain intentionally unassigned by direction of the project owner. AgriScore therefore exposes an administrator-only `BLOCKED` / `DISABLED` readiness status, an audit-recordable acknowledgement path, and no ability to enrol real farmers, assign ownership, activate a live pilot, calculate a score, or issue an automated decision. The protocol defines the approvals that must be completed before stakeholder mobilisation can proceed. Full validation passed 42 files and 77 tests. | `docs/supervised-guyana-maize-pilot-protocol.md`; `server/pilotReadiness.ts`; pilot-readiness tests |
 
+| **26 August 2026** | Controlled-pilot threat model and evidence-upload regression guard completed | AgriScore now has a documented threat-model baseline covering private Guide access, operator authority, PDF evidence handling, LLM boundaries, privacy incidents, and deferred provider/channel integrations. It explicitly records remaining pre-pilot risks such as independent security testing, local evidence approval, retention decisions, and human ownership. The existing PDF magic-header guard is now directly regression-tested to reject malformed or PNG-labeled-as-PDF payloads before storage or profile mutation. The blocked pilot state remains unchanged. Full validation passed 43 files and 79 tests. | `docs/controlled-pilot-threat-model.md`; `server/controlRepository.pdfUpload.test.ts` |
+
 ## What has been built
 
 The project is no longer only an idea or a presentation. It has a real, tested backend foundation.
