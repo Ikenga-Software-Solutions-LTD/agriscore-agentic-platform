@@ -75,6 +75,8 @@ The work then shifted from a technical engine to a usable pilot concept. A detai
 
 | **26 August 2026** | Controlled-pilot threat model and evidence-upload regression guard completed | AgriScore now has a documented threat-model baseline covering private Guide access, operator authority, PDF evidence handling, LLM boundaries, privacy incidents, and deferred provider/channel integrations. It explicitly records remaining pre-pilot risks such as independent security testing, local evidence approval, retention decisions, and human ownership. The existing PDF magic-header guard is now directly regression-tested to reject malformed or PNG-labeled-as-PDF payloads before storage or profile mutation. The blocked pilot state remains unchanged. Full validation passed 43 files and 79 tests. | `docs/controlled-pilot-threat-model.md`; `server/controlRepository.pdfUpload.test.ts` |
 
+| **26 August 2026** | Proposed supervised-pilot accountability roles nominated | Chinedu Jamike was nominated as Pilot Lead; The Professor as Crop-profile/Agronomy Reviewer; Libertas Alpha as Review Operator; Boots on ground as Field Officer or Partner Liaison; and Emanuel as Privacy/Incident Lead. The protected readiness registry records all five as `NOMINATED_PENDING_APPROVAL`. This establishes proposed accountability without asserting acceptance, stakeholder approval, evidence approval, or authority to enrol farmers. The pilot remains `BLOCKED` / `DISABLED` until the outstanding gates are formally evidenced. Full validation passed 43 files and 79 tests. | `server/pilotReadiness.ts`; `docs/supervised-guyana-maize-pilot-protocol.md` |
+
 ## What has been built
 
 The project is no longer only an idea or a presentation. It has a real, tested backend foundation.
